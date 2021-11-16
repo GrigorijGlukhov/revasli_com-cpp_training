@@ -1,0 +1,13 @@
+CC=g++
+CFLAGS=-c -Wall
+all: app_vector
+app_vector: main.o point3d.o vector3d.o 
+	$(CC) main.o point3d.o vector3d.o -o app_vector 
+main.o:
+	$(CC) $(CFLAGS) main.cpp
+point3d.o:
+	$(CC) $(CFLAGS) point3d.cpp
+vector3d.o:
+	$(CC) $(CFLAGS) vector3d.cpp
+clean:
+	rm -rf *.o main
