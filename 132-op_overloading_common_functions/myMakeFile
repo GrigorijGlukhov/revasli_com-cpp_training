@@ -1,0 +1,11 @@
+CC=g++
+CFLAGS=-c -Wall
+all: app_dollars1
+app_dollars1: main.o dollars.o 
+	$(CC) main.o dollars.o -o app_dollars1 
+main.o:
+	$(CC) $(CFLAGS) main.cpp
+dollars.o:
+	$(CC) $(CFLAGS) dollars.h dollars.cpp
+clean:
+	rm -rf *.o main
